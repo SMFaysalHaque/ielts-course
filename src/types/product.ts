@@ -13,6 +13,10 @@ export interface ProductData {
   lang: "en" | "bn";
 }
 
+export interface Lang {
+  lang: string | string;
+}
+
 export interface HomeProps {
   data: ProductData;
   lang: "en" | "bn";
@@ -26,15 +30,26 @@ export interface Media {
 }
 
 export interface Checklist {
-  title: string;
+  color: string;
+  icon: string;
+  id: string;
+  text: string;
 }
 
 export interface Seo {
   title: string;
   description: string;
-  og_title?: string;
-  og_description?: string;
-  og_image?: string;
+  keywords?: string[];
+  defaultMeta?: {
+    type: string; // "property" or "name"
+    value: string; // "og:title", "og:image", etc.
+    content: string;
+  }[];
+  schema?: {
+    meta_name: string; // "ld-json"
+    meta_value: string; // JSON string for schema.org
+    type: string; // "ld-json"
+  }[];
 }
 
 export interface Section {

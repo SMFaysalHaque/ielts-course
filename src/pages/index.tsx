@@ -1,17 +1,21 @@
 import CoursePage from "@/components/CoursePage";
-import { ProductData } from "@/types/product";
+import { Lang, ProductData } from "@/types/product";
 import { fetchProductData } from "@/utils/api";
 import { t } from "@/utils/translate";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const Home = ({ data }: { data: ProductData }) => {
-  const lang = data.lang;
+const Home = ({ data }: { data: ProductData & { lang: Lang } }) => {
+  const res = data["data"];
+  console.log("Home", res);
+  const lang: Lang = data.lang;
   const router = useRouter();
 
-  const changeLanguage = (lang: "en" | "bn") => {
-    router.push(`/?lang=${lang}`);
+  const changeLanguage = (value: string) => {
+    if (value === "en" || value === "bn") {
+      router.push(`/?lang=${value}`);
+    }
   };
 
   return (
@@ -50,7 +54,7 @@ const Home = ({ data }: { data: ProductData }) => {
         <p>{t(lang, "school")}</p>
         <select
           className="border p-2 rounded"
-          defaultValue={lang}
+          defaultValue={String(lang)}
           onChange={(e) => changeLanguage(e.target.value as "en" | "bn")}
         >
           <option value="en">English</option>
@@ -58,7 +62,11 @@ const Home = ({ data }: { data: ProductData }) => {
         </select>
       </nav>
 
-      {data ? <CoursePage data={data} /> : <p>{t(lang, "noData")}</p>}
+      {data ? (
+        <CoursePage data={res} lang={lang} />
+      ) : (
+        <p>{t(lang, "noData")}</p>
+      )}
     </>
   );
 };

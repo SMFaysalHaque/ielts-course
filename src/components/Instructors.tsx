@@ -1,6 +1,13 @@
-import { Section } from "@/types/product";
+import { Lang, Section } from "@/types/product";
+import Image from "next";
 
-export default function Instructors({ sections }: { sections: Section[] }) {
+export default function Instructors({
+  sections,
+  lang,
+}: {
+  sections: Section[];
+  lang: Lang;
+}) {
   const instructorsSection = sections?.find((s) => s.type === "instructors");
 
   if (!instructorsSection || !instructorsSection.values?.length) return null;
@@ -17,10 +24,10 @@ export default function Instructors({ sections }: { sections: Section[] }) {
             key={idx}
             className="flex items-center bg-white p-4 gap-5 border rounded-lg"
           >
-            <img
+            <Image
               src={inst.image}
               alt={inst.name}
-              className="w-[73px] h-[73px] h-52 object-cover rounded-[50%] mb-4"
+              className="w-[73px] h-[73px] object-cover rounded-[50%] mb-4"
             />
             <div>
               <h3 className="text-lg font-bold">{inst.name}</h3>

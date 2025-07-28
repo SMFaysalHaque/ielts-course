@@ -1,8 +1,16 @@
 // components/Trailer.tsx
-import { Media } from "@/types/product";
+import { Lang, Media } from "@/types/product";
+import Image from "next";
 import { useState } from "react";
 
-export default function Trailer({ media }: { media: Media[] }) {
+export default function Trailer({
+  media,
+  lang,
+}: {
+  media: Media[];
+  lang: Lang;
+}) {
+  console.log(media);
   const videoItems = media.filter(
     (item) => item.resource_type === "video" && item.resource_value
   );
@@ -38,7 +46,7 @@ export default function Trailer({ media }: { media: Media[] }) {
         {!isPlaying ? (
           // Thumbnail with Play Button
           <div className="relative w-full h-full">
-            <img
+            <Image
               src={
                 selectedVideo.thumbnail_url ||
                 `https://img.youtube.com/vi/${selectedVideo.resource_value}/maxresdefault.jpg`
@@ -112,7 +120,7 @@ export default function Trailer({ media }: { media: Media[] }) {
                 }`}
               >
                 <div className="w-32 aspect-video relative">
-                  <img
+                  <Image
                     src={
                       item.thumbnail_url ||
                       `https://img.youtube.com/vi/${item.resource_value}/mqdefault.jpg`

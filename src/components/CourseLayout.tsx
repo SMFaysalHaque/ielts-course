@@ -1,7 +1,14 @@
 // components/CourseLayout.tsx
-import { Section } from "@/types/product";
+import { Lang, Section } from "@/types/product";
+import Image from "next";
 
-export default function CourseLayout({ sections }: { sections: Section[] }) {
+export default function CourseLayout({
+  sections,
+  lang,
+}: {
+  sections: Section[];
+  lang: Lang;
+}) {
   const layout = sections?.find((s) => s.type === "features");
   if (!layout) return null;
 
@@ -12,7 +19,7 @@ export default function CourseLayout({ sections }: { sections: Section[] }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 text-white">
           {layout.values.map((value) => (
             <div key={value.id} className="flex items-start gap-4">
-              <img src={value.icon} alt={value.title} className="w-9 h-9" />
+              <Image src={value.icon} alt={value.title} className="w-9 h-9" />
               <div className="flex flex-col gap-2">
                 <p className="text-[18px] font-[500px] leading-[26px] text-white ">
                   {value.title}
