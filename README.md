@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IELTS Course Platform 🌐
 
-## Getting Started
+**_Live Website:_** [IELTS Course Platform](https://ielts-course-two.vercel.app/)
 
-First, run the development server:
+A responsive, scalable, and feature-rich web application built with **Next.js 14**, **Tailwind CSS**, and **TypeScript** for delivering IELTS course content, media previews, and structured curriculum data to users. This project demonstrates strong front-end architecture and clean integration with external APIs.
+
+---
+
+## 🚀 Features
+
+- ✅ Fully responsive design using Tailwind CSS
+- 🎬 Course preview trailer using YouTube integration
+- 🧠 Dynamic content rendering from API
+- 🔍 SEO-optimized with Next.js
+- 🎯 TypeScript for static typing
+- 🧼 Linting and formatting using ESLint
+- 🔧 PostCSS integration
+
+---
+
+## 📦 Tech Stack
+
+| Technology    | Description                                 |
+|---------------|---------------------------------------------|
+| Next.js       | Framework for React, supports SSR & SSG     |
+| TypeScript    | Static typing for better DX and reliability |
+| Tailwind CSS  | Utility-first CSS framework                 |
+| PostCSS       | CSS post-processing                         |
+| ESLint        | Linting for code quality                    |
+
+---
+
+## 🛠️ Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/ielts-course.git
+cd ielts-course
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Run the Development Server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Scripts
 
-## Learn More
+```bash
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Folder Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+ielts-course/
+├── components/           # Reusable UI components
+├── pages/                # Next.js pages
+├── public/               # Static files
+├── styles/               # Global styles
+├── utils/                # Utility functions
+├── types/                # TypeScript interfaces
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── tailwind.config.js
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✅ Linting & Formatting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Configured with `eslint.config.mjs` to maintain clean and consistent code.
+
+```bash
+npm run lint
+```
+
+---
+
+## 🌐 Deployment
+
+This app is ready to deploy on platforms like Vercel, Netlify, or Render.
+
+For Vercel:
+
+1. Push your code to GitHub
+
+2. Connect to Vercel and import the repo
+
+3. Set the build command: `npm run build`
+
+4. Set the output directory: `./.next`
+
+---
+
+## 🧠 Rationale Behind Decisions
+
+1. Next.js was chosen for its SSR, SEO support, and great developer experience.
+
+2. Tailwind CSS allows for rapid UI development with consistent styling.
+
+3. TypeScript helps catch errors early during development.
+
+4. Modular component structure keeps code clean and maintainable.
+
+5. API structure abstracts logic and improves reusability.
+
+---
+
+## 👨‍💻 Author
+
+**_S. M. Faysal Haque_**<br/>
+Front-End Developer | React, Next, Vue, Nuxt | Passionate about UI/UX and scalable frontend systems.<br/>
+📧 **_Email:_** smfaysalhaque007@gmail.com
+
+---
+
+
+
