@@ -22,7 +22,7 @@ export default function CourseDetails({ sections }: { sections: Section[] }) {
 
           return (
             <div
-              key={value.id}
+              key={index}
               className={`overflow-hidden transition-all duration-200 border border-t-0 border-l-0 border-r-0 border-gray-200 ${
                 isOpen && isLast ? "rounded-bl-xl rounded-br-xl" : ""
               }`}
