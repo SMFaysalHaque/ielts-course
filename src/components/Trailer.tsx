@@ -22,7 +22,7 @@ export default function Trailer({ media }: { media: Media[] }) {
         {/* Left Arrow - Only show if more than 1 video */}
         {videoItems.length > 1 && (
           <button
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full shadow z-10 transition-all"
+            className="absolute left-2 top-1/2 -translate-y-1/2 text-[#1cab55] bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full shadow z-10 transition-all"
             onClick={() => {
               setIsPlaying(false);
               setSelectedIndex((prev) =>
@@ -57,7 +57,7 @@ export default function Trailer({ media }: { media: Media[] }) {
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
               <button
                 onClick={() => setIsPlaying(true)}
-                className="w-20 h-20 bg-red-600 hover:bg-red-700 text-white text-3xl rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-colors"
+                className="w-16 h-16 bg-[#1cab55] text-white text-3xl rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-colors"
                 aria-label="Play video"
               >
                 ▶
@@ -65,7 +65,6 @@ export default function Trailer({ media }: { media: Media[] }) {
             </div>
           </div>
         ) : (
-          // YouTube Embed
           <iframe
             src={`https://www.youtube.com/embed/${selectedVideo.resource_value}?autoplay=1&modestbranding=1&rel=0`}
             title="YouTube video player"
@@ -79,7 +78,7 @@ export default function Trailer({ media }: { media: Media[] }) {
         {/* Right Arrow - Only show if more than 1 video */}
         {videoItems.length > 1 && (
           <button
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full shadow z-10 transition-all"
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-[#1cab55] bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full shadow z-10 transition-all"
             onClick={() => {
               setIsPlaying(false);
               setSelectedIndex((prev) =>
@@ -109,7 +108,7 @@ export default function Trailer({ media }: { media: Media[] }) {
                 }}
                 className={`cursor-pointer border-2 rounded-md p-1 flex-shrink-0 transition-colors ${
                   idx === selectedIndex
-                    ? "border-blue-600"
+                    ? "border-[#1cab55]"
                     : "border-gray-300 hover:border-gray-400"
                 }`}
               >
@@ -133,7 +132,7 @@ export default function Trailer({ media }: { media: Media[] }) {
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded">
                     <div className="w-8 h-8 bg-white bg-opacity-90 rounded-full flex items-center justify-center">
-                      <span className="text-xs ml-0.5">▶</span>
+                      <span className="text-xs ml-0.5 text-[#1cab55]">▶</span>
                     </div>
                   </div>
                 </div>

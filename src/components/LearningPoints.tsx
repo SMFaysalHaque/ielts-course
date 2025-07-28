@@ -11,7 +11,7 @@ export default function LearningPoints({ sections }: { sections: Section[] }) {
         {pointers.name}
       </h2>
       <div className="bg-white border border-gray-200 rounded-xl p-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-6">
           {pointers.values.map((pointer: any, ind: number) => (
             <div key={ind} className="flex gap-4">
               <div>
@@ -20,7 +20,7 @@ export default function LearningPoints({ sections }: { sections: Section[] }) {
                   height="24px"
                   viewBox="0 -960 960 960"
                   width="24px"
-                  fill="#6294F8"
+                  fill="#1cab55"
                 >
                   <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
                 </svg>

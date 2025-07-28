@@ -49,7 +49,15 @@ export default function CourseDetails({ sections }: { sections: Section[] }) {
                     isOpen ? "rotate-180" : "rotate-0"
                   }`}
                 >
-                  {/* SVG icon here */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#434343"
+                  >
+                    <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
+                  </svg>
                 </span>
               </button>
 

@@ -16,8 +16,6 @@ export default function CoursePreview({
     <div className="md:max-w-[330px] lg:max-w-[400px] mx-auto rounded-xl shadow-lg border p-4 bg-white">
       <Trailer media={response.media} />
 
-      <p className="inline-block text-2xl font-semibold mb-3">৳1000</p>
-
       <div className="w-full">
         <CTAButton text={response.cta_text} />
       </div>

@@ -10,7 +10,7 @@ export default function CourseLayout({ sections }: { sections: Section[] }) {
     <>
       <h2 className="text-black text-xl font-semibold mb-4">{layout.name}</h2>
       <div className="bg-[#0A1629] rounded-xl p-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 text-white">
           {layout.values.map((value, idx) => {
             if (
               !value ||
@@ -34,8 +34,8 @@ export default function CourseLayout({ sections }: { sections: Section[] }) {
                   <Image
                     src={item.icon}
                     alt={item.title}
-                    width={24}
-                    height={24}
+                    width={40}
+                    height={40}
                     className="object-contain"
                   />
                 </div>

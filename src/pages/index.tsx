@@ -42,10 +42,10 @@ const Home = ({ data, lang }: { data: ProductData; lang: Lang }) => {
         )}
       </Head>
 
-      <nav className="flex items-center justify-between p-4">
+      <nav className="sticky top-0 z-50 bg-white shadow flex items-center justify-between p-4">
         <p>{t(lang, "school")}</p>
         <select
-          className="border p-2 rounded"
+          className="border p-2 rounded outline-none hover:cursor-pointer"
           defaultValue={String(lang)}
           onChange={(e) => changeLanguage(e.target.value as "en" | "bn")}
         >
