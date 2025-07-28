@@ -1,15 +1,9 @@
 // components/Trailer.tsx
-import { Lang, Media } from "@/types/product";
+import { Media } from "@/types/product";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Trailer({
-  media,
-  lang,
-}: {
-  media: Media[];
-  lang: Lang;
-}) {
+export default function Trailer({ media }: { media: Media[] }) {
   console.log(media);
   const videoItems = media.filter(
     (item) => item.resource_type === "video" && item.resource_value

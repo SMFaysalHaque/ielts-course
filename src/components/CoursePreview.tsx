@@ -15,14 +15,14 @@ export default function CoursePreview({
   return (
     <div className="md:max-w-[330px] lg:max-w-[400px] mx-auto rounded-xl shadow-lg border p-4 bg-white">
       {/* Course Trailer Section */}
-      <Trailer media={data.media} lang={lang} />
+      <Trailer media={data.media} />
 
       {/* Price Display */}
       <p className="inline-block text-2xl font-semibold mb-3">৳1000</p>
 
       {/* CTA Button */}
       <div className="w-full">
-        <CTAButton text={data.cta_text} lang={lang} />
+        <CTAButton text={data.cta_text} />
       </div>
 
       {/* Checklist Section */}
