@@ -1,13 +1,6 @@
 // components/Description.tsx
-import { Lang } from "@/types/product";
 
-export default function Description({
-  html,
-  lang,
-}: {
-  html: string;
-  lang: Lang;
-}) {
+export default function Description({ html }: { html: string }) {
   console.log("HTML::", html);
   return <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />;
 }

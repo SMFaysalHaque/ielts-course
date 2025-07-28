@@ -1,12 +1,6 @@
-import { Lang, Section } from "@/types/product";
+import { Section } from "@/types/product";
 
-export default function LearningPoints({
-  sections,
-  lang,
-}: {
-  sections: Section[];
-  lang: Lang;
-}) {
+export default function LearningPoints({ sections }: { sections: Section[] }) {
   const pointers = sections?.find((s) => s.type === "pointers");
   if (!pointers) return null;
 

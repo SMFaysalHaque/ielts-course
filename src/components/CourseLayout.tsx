@@ -1,14 +1,8 @@
 // components/CourseLayout.tsx
-import { Lang, Section } from "@/types/product";
-import Image from "next";
+import { Section } from "@/types/product";
+import Image from "next/image";
 
-export default function CourseLayout({
-  sections,
-  lang,
-}: {
-  sections: Section[];
-  lang: Lang;
-}) {
+export default function CourseLayout({ sections }: { sections: Section[] }) {
   const layout = sections?.find((s) => s.type === "features");
   if (!layout) return null;
 

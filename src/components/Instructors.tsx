@@ -1,13 +1,7 @@
-import { Lang, Section } from "@/types/product";
-import Image from "next";
+import { Section } from "@/types/product";
+import Image from "next/image";
 
-export default function Instructors({
-  sections,
-  lang,
-}: {
-  sections: Section[];
-  lang: Lang;
-}) {
+export default function Instructors({ sections }: { sections: Section[] }) {
   const instructorsSection = sections?.find((s) => s.type === "instructors");
 
   if (!instructorsSection || !instructorsSection.values?.length) return null;

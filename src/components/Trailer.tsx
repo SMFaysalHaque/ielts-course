@@ -1,6 +1,6 @@
 // components/Trailer.tsx
 import { Lang, Media } from "@/types/product";
-import Image from "next";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Trailer({

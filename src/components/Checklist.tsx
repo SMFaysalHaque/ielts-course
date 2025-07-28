@@ -1,7 +1,7 @@
 // components/Checklist.tsx
 import type { Checklist, Lang } from "@/types/product";
 import { t } from "@/utils/translate";
-import Image from "next";
+import Image from "next/image";
 
 // const lang = ProductData.lang;
 

@@ -1,13 +1,7 @@
-import { Lang, Section } from "@/types/product";
+import { Section } from "@/types/product";
 import { useState } from "react";
 
-export default function CourseDetails({
-  sections,
-  lang,
-}: {
-  sections: Section[];
-  lang: Lang;
-}) {
+export default function CourseDetails({ sections }: { sections: Section[] }) {
   const about = sections?.find((s) => s.type === "about");
   const [openIndex, setOpenIndex] = useState<number>(0); // open first section
 

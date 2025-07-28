@@ -21,12 +21,12 @@ export default function CoursePage({
   return (
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 p-4">
       <div className="lg:col-span-8 md:col-span-7 col-span-12 space-y-6">
-        <Title title={data.title} lang={lang} />
-        <Description html={data.description} lang={lang} />
-        <Instructors sections={data.sections} lang={lang} />
-        <CourseLayout sections={data.sections} lang={lang} />
-        <LearningPoints sections={data.sections} lang={lang} />
-        <CourseDetails sections={data.sections} lang={lang} />
+        <Title title={data.title} />
+        <Description html={data.description} />
+        <Instructors sections={data.sections} />
+        <CourseLayout sections={data.sections} />
+        <LearningPoints sections={data.sections} />
+        <CourseDetails sections={data.sections} />
       </div>
       <div className="lg:col-span-4 md:col-span-5 col-span-12">
         <CoursePreview data={data} lang={lang} />
