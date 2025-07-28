@@ -18,11 +18,15 @@ export default function Instructors({ sections }: { sections: Section[] }) {
             key={idx}
             className="flex items-center bg-white p-4 gap-5 border rounded-lg"
           >
-            <Image
-              src={inst.image}
-              alt={inst.name}
-              className="w-[73px] h-[73px] object-cover rounded-[50%] mb-4"
-            />
+            <div className="rounded-[50%] mb-4">
+              <Image
+                src={inst.image}
+                alt={inst.name}
+                width={73}
+                height={73}
+                className=" object-cover"
+              />
+            </div>
             <div>
               <h3 className="text-lg font-bold">{inst.name}</h3>
               <p className="text-sm text-gray-600 mb-2">

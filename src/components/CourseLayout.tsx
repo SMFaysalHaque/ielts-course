@@ -13,7 +13,15 @@ export default function CourseLayout({ sections }: { sections: Section[] }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 text-white">
           {layout.values.map((value) => (
             <div key={value.id} className="flex items-start gap-4">
-              <Image src={value.icon} alt={value.title} className="w-9 h-9" />
+              <div className="">
+                <Image
+                  src={value.icon}
+                  alt={value.title}
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
               <div className="flex flex-col gap-2">
                 <p className="text-[18px] font-[500px] leading-[26px] text-white ">
                   {value.title}

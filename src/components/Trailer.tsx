@@ -46,7 +46,8 @@ export default function Trailer({ media }: { media: Media[] }) {
                 `https://img.youtube.com/vi/${selectedVideo.resource_value}/maxresdefault.jpg`
               }
               alt={`Video thumbnail`}
-              className="w-full h-full object-cover"
+              className="object-cover"
+              layout="fill"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 if (target.src.includes("maxresdefault")) {
@@ -114,20 +115,23 @@ export default function Trailer({ media }: { media: Media[] }) {
                 }`}
               >
                 <div className="w-32 aspect-video relative">
-                  <Image
-                    src={
-                      item.thumbnail_url ||
-                      `https://img.youtube.com/vi/${item.resource_value}/mqdefault.jpg`
-                    }
-                    alt={`Video ${idx + 1} thumbnail`}
-                    className="w-full h-full object-cover rounded"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      if (!target.src.includes("hqdefault")) {
-                        target.src = `https://img.youtube.com/vi/${item.resource_value}/hqdefault.jpg`;
+                  <div className="w-full h-full">
+                    <Image
+                      src={
+                        item.thumbnail_url ||
+                        `https://img.youtube.com/vi/${item.resource_value}/mqdefault.jpg`
                       }
-                    }}
-                  />
+                      alt={`Video ${idx + 1} thumbnail`}
+                      className="object-cover rounded"
+                      layout="fill"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        if (!target.src.includes("hqdefault")) {
+                          target.src = `https://img.youtube.com/vi/${item.resource_value}/hqdefault.jpg`;
+                        }
+                      }}
+                    />
+                  </div>
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded">
                     <div className="w-8 h-8 bg-white bg-opacity-90 rounded-full flex items-center justify-center">
                       <span className="text-xs ml-0.5">▶</span>

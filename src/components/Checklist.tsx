@@ -26,7 +26,15 @@ export default function Checklist({
         {checklist.map((item) => (
           <li key={item.id} className="">
             <div className="flex items-center gap-3">
-              <Image src={item.icon} alt={item.text} className="w-6 h-6" />
+              <div className="">
+                <Image
+                  src={item.icon}
+                  alt={item.text}
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
               <p>{item.text}</p>
             </div>
           </li>
