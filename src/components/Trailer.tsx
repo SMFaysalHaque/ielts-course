@@ -22,7 +22,7 @@ export default function Trailer({ media }: { media: Media[] }) {
         {/* Left Arrow - Only show if more than 1 video */}
         {videoItems.length > 1 && (
           <button
-            className="absolute left-2 top-1/2 -translate-y-1/2 text-[#1cab55] bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full shadow z-10 transition-all"
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full shadow z-10 transition-all p-2"
             onClick={() => {
               setIsPlaying(false);
               setSelectedIndex((prev) =>
@@ -31,7 +31,15 @@ export default function Trailer({ media }: { media: Media[] }) {
             }}
             aria-label="Previous video"
           >
-            &#8592;
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20px"
+              viewBox="0 -960 960 960"
+              width="20px"
+              fill="#1cab55"
+            >
+              <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+            </svg>
           </button>
         )}
 
@@ -78,7 +86,7 @@ export default function Trailer({ media }: { media: Media[] }) {
         {/* Right Arrow - Only show if more than 1 video */}
         {videoItems.length > 1 && (
           <button
-            className="absolute right-2 top-1/2 -translate-y-1/2 text-[#1cab55] bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full shadow z-10 transition-all"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full shadow z-10 transition-all p-2"
             onClick={() => {
               setIsPlaying(false);
               setSelectedIndex((prev) =>
@@ -87,7 +95,15 @@ export default function Trailer({ media }: { media: Media[] }) {
             }}
             aria-label="Next video"
           >
-            &#8594;
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20px"
+              viewBox="0 -960 960 960"
+              width="20px"
+              fill="#1cab55"
+            >
+              <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+            </svg>
           </button>
         )}
       </div>
