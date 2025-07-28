@@ -1,33 +1,29 @@
-// components/CoursePreview.tsx
-import CTAButton from "./CTAButton";
+import type { CourseData, Lang } from "@/types/product";
 import Checklist from "./Checklist";
+import CTAButton from "./CTAButton";
 import Trailer from "./Trailer";
-
-import type { Lang, ProductData } from "@/types/product";
 
 export default function CoursePreview({
   data,
   lang,
 }: {
-  data: ProductData;
+  data: CourseData;
   lang: Lang;
 }) {
+  const response: CourseData = data;
+  console.log("Response22::::::", data);
   return (
     <div className="md:max-w-[330px] lg:max-w-[400px] mx-auto rounded-xl shadow-lg border p-4 bg-white">
-      {/* Course Trailer Section */}
-      <Trailer media={data.media} />
+      <Trailer media={response.media} />
 
-      {/* Price Display */}
       <p className="inline-block text-2xl font-semibold mb-3">৳1000</p>
 
-      {/* CTA Button */}
       <div className="w-full">
-        <CTAButton text={data.cta_text} />
+        <CTAButton text={response.cta_text} />
       </div>
 
-      {/* Checklist Section */}
       <div className="mt-6">
-        <Checklist checklist={data.checklist} lang={lang} />
+        <Checklist checklist={response.checklist} lang={lang} />
       </div>
     </div>
   );

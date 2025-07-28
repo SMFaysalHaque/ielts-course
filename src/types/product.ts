@@ -1,6 +1,13 @@
-// types/product.ts
-
 export interface ProductData {
+  code: number;
+  data: CourseData;
+  error: unknown[];
+  message: string;
+  payload: unknown[];
+  status_code: number;
+}
+
+export interface CourseData {
   slug: string;
   id: number;
   title: string;
@@ -10,22 +17,19 @@ export interface ProductData {
   seo: Seo;
   cta_text: CTA;
   sections: Section[];
-  lang: "en" | "bn";
 }
 
-export interface Lang {
-  lang: string | string;
-}
+export type Lang = "en" | "bn";
 
 export interface HomeProps {
-  data: ProductData;
+  data: CourseData;
   lang: "en" | "bn";
 }
 
 export interface Media {
   name: string;
   resource_type: "video" | "image";
-  resource_value: string; // YouTube ID or image URL
+  resource_value: string;
   thumbnail_url?: string;
 }
 
@@ -41,14 +45,14 @@ export interface Seo {
   description: string;
   keywords?: string[];
   defaultMeta?: {
-    type: string; // "property" or "name"
-    value: string; // "og:title", "og:image", etc.
+    type: string;
+    value: string;
     content: string;
   }[];
   schema?: {
-    meta_name: string; // "ld-json"
-    meta_value: string; // JSON string for schema.org
-    type: string; // "ld-json"
+    meta_name: string;
+    meta_value: string;
+    type: string;
   }[];
 }
 

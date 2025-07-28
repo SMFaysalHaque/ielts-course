@@ -1,4 +1,3 @@
-// components/CoursePage.tsx
 import CourseDetails from "@/components/CourseDetails";
 import CourseLayout from "@/components/CourseLayout";
 import Description from "@/components/Description";
@@ -15,21 +14,22 @@ export default function CoursePage({
   data: ProductData;
   lang: Lang;
 }) {
-  // No need to access data.data — data is already the product info
-  console.log("[CoursePage] props:", data);
+  const response = data.data;
+
+  console.log("[CoursePage] props:", typeof response);
 
   return (
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 p-4">
       <div className="lg:col-span-8 md:col-span-7 col-span-12 space-y-6">
-        <Title title={data.title} />
-        <Description html={data.description} />
-        <Instructors sections={data.sections} />
-        <CourseLayout sections={data.sections} />
-        <LearningPoints sections={data.sections} />
-        <CourseDetails sections={data.sections} />
+        <Title title={response.title} />
+        <Description html={response.description} />
+        <Instructors sections={response.sections} />
+        <CourseLayout sections={response.sections} />
+        <LearningPoints sections={response.sections} />
+        <CourseDetails sections={response.sections} />
       </div>
       <div className="lg:col-span-4 md:col-span-5 col-span-12">
-        <CoursePreview data={data} lang={lang} />
+        <CoursePreview data={response} lang={lang} />
       </div>
     </div>
   );

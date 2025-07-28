@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Section } from "@/types/product";
 
 export default function LearningPoints({ sections }: { sections: Section[] }) {
@@ -11,8 +12,8 @@ export default function LearningPoints({ sections }: { sections: Section[] }) {
       </h2>
       <div className="bg-white border border-gray-200 rounded-xl p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
-          {pointers.values.map((pointer) => (
-            <div key={pointer.id} className="flex gap-4">
+          {pointers.values.map((pointer: any, ind: number) => (
+            <div key={ind} className="flex gap-4">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

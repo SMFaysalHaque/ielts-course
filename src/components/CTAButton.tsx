@@ -1,4 +1,3 @@
-// components/CTAButton.tsx
 import { CTA } from "@/types/product";
 
 export default function CTAButton({ text }: { text: CTA }) {

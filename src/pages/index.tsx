@@ -6,10 +6,8 @@ import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const Home = ({ data }: { data: ProductData & { lang: Lang } }) => {
-  const res = data["data"];
-  console.log("Home", res);
-  const lang: Lang = data.lang;
+const Home = ({ data, lang }: { data: ProductData; lang: Lang }) => {
+  const course = data.data;
   const router = useRouter();
 
   const changeLanguage = (value: string) => {
@@ -21,28 +19,22 @@ const Home = ({ data }: { data: ProductData & { lang: Lang } }) => {
   return (
     <>
       <Head>
-        <title>{data.seo?.title ?? t(lang, "title")}</title>
-
-        {data.seo?.description && (
-          <meta name="description" content={data.seo.description} />
+        <title>{course.seo?.title ?? t(lang, "title")}</title>
+        {course.seo?.description && (
+          <meta name="description" content={course.seo.description} />
         )}
-
-        {data.seo?.keywords && Array.isArray(data.seo.keywords) && (
-          <meta name="keywords" content={data.seo.keywords.join(", ")} />
+        {course.seo?.keywords?.length && (
+          <meta name="keywords" content={course.seo.keywords.join(", ")} />
         )}
-
-        {data.seo?.defaultMeta?.map((meta, index) => {
-          const tagProps: Record<string, string> = {
-            content: meta.content,
-          };
+        {course.seo?.defaultMeta?.map((meta, i) => {
+          const tagProps: Record<string, string> = { content: meta.content };
           tagProps[meta.type] = meta.value;
-          return <meta key={index} {...tagProps} />;
+          return <meta key={i} {...tagProps} />;
         })}
-
-        {data.seo?.schema?.map((schema, index) =>
+        {course.seo?.schema?.map((schema, i) =>
           schema.meta_name === "ld-json" && schema.meta_value ? (
             <script
-              key={index}
+              key={i}
               type="application/ld+json"
               dangerouslySetInnerHTML={{ __html: schema.meta_value }}
             />
@@ -63,7 +55,7 @@ const Home = ({ data }: { data: ProductData & { lang: Lang } }) => {
       </nav>
 
       {data ? (
-        <CoursePage data={res} lang={lang} />
+        <CoursePage data={data} lang={lang} />
       ) : (
         <p>{t(lang, "noData")}</p>
       )}
@@ -75,13 +67,13 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
-    const lang = (context.query.lang as "en" | "bn") || "en";
-    const data = await fetchProductData(lang);
+    const langQuery = context.query.lang;
+    const lang = langQuery === "en" || langQuery === "bn" ? langQuery : "en";
 
-    // Add `lang` to the ProductData object so it's available in components
-    return { props: { data: { ...data, lang } } };
+    const result = await fetchProductData(lang);
+
+    return { props: { data: result, lang } };
   } catch (error) {
-    console.error("SSR fetch error:", error);
-    return { props: { data: null } };
+    return { props: { data: null, lang: "en" } };
   }
 };

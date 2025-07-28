@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Section } from "@/types/product";
 import Image from "next/image";
 
@@ -13,7 +14,7 @@ export default function Instructors({ sections }: { sections: Section[] }) {
       </h2>
 
       <div className="gap-6">
-        {instructorsSection.values.map((inst, idx) => (
+        {instructorsSection.values.map((inst: any, idx: number) => (
           <div
             key={idx}
             className="flex items-center bg-white p-4 gap-5 border rounded-lg"

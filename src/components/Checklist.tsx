@@ -1,9 +1,6 @@
-// components/Checklist.tsx
 import type { Checklist, Lang } from "@/types/product";
 import { t } from "@/utils/translate";
 import Image from "next/image";
-
-// const lang = ProductData.lang;
 
 export default function Checklist({
   checklist,
@@ -12,7 +9,6 @@ export default function Checklist({
   checklist: Checklist[];
   lang: Lang;
 }) {
-  // const lang = "en" | "bn";
   if (!checklist?.length) return null;
 
   console.log("Check List::", checklist, lang);
