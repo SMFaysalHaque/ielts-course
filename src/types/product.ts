@@ -52,13 +52,13 @@ export interface Seo {
   }[];
 }
 
-export interface Section<T = any> {
+export interface Section {
   type: string;
   name: string;
   description: string;
   bg_color: string;
   order_idx: number;
-  values: T[];
+  values: unknown[];
 }
 
 export interface CTA {
