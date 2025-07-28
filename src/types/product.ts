@@ -52,13 +52,13 @@ export interface Seo {
   }[];
 }
 
-export interface Section {
+export interface Section<T = any> {
   type: string;
   name: string;
   description: string;
   bg_color: string;
   order_idx: number;
-  values: any[]; // or create a more strict type for instructor if needed
+  values: T[];
 }
 
 export interface CTA {
