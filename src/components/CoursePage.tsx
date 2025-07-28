@@ -22,7 +22,7 @@ export default function CoursePage({
   console.log("[CoursePage] props:", typeof response);
 
   return (
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 px-4 pt-10 pb-36">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 px-4 pt-10 pb-36 md:pb-10">
       <div className="lg:col-span-8 md:col-span-7 col-span-12 space-y-6">
         <Title title={response.title} />
         <Description html={response.description} />
