@@ -2,7 +2,7 @@
 
 **_Live Website:_** [IELTS Course Platform](https://ielts-course-two.vercel.app/)
 
-A responsive, scalable, and feature-rich web application built with **Next.js 14**, **Tailwind CSS**, and **TypeScript** for delivering IELTS course content, media previews, and structured curriculum data to users. This project demonstrates strong front-end architecture and clean integration with external APIs.
+A responsive, scalable, and feature-rich web application built with **Next.js 15**, **Tailwind CSS**, and **TypeScript** for delivering IELTS course content, media previews, and structured curriculum data to users. This project demonstrates strong front-end architecture and clean integration with external APIs.
 
 ---
 
