@@ -4,14 +4,12 @@ import Image from "next/image";
 
 export default function Checklist({
   checklist,
-  lang,
+  lang
 }: {
   checklist: Checklist[];
   lang: Lang;
 }) {
   if (!checklist?.length) return null;
-
-  console.log("Check List::", checklist, lang);
 
   return (
     <div>

@@ -8,12 +8,10 @@ export async function fetchProductData(lang: "en" | "bn"): Promise<CourseData> {
       params: { lang },
       headers: {
         "X-TENMS-SOURCE-PLATFORM": "web",
-        accept: "application/json",
-      },
+        accept: "application/json"
+      }
     }
   );
-
-  console.log("Fetched Data:", response.data); // ✅ Add this
 
   return response.data;
 }

@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Trailer({ media }: { media: Media[] }) {
-  console.log("Media:::::", media);
   const videoItems = media.filter(
     (item) => item.resource_type === "video" && item.resource_value
   );

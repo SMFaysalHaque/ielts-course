@@ -1,7 +1,6 @@
 import { CTA } from "@/types/product";
 
 export default function CTAButton({ text }: { text: CTA }) {
-  console.log(text);
   return (
     <>
       <p className="text-2xl text-center md:text-start font-semibold mb-3">

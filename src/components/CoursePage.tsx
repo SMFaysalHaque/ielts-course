@@ -12,14 +12,12 @@ import Trailer from "./Trailer";
 
 export default function CoursePage({
   data,
-  lang,
+  lang
 }: {
   data: ProductData;
   lang: Lang;
 }) {
   const response = data.data;
-
-  console.log("[CoursePage] props:", typeof response);
 
   return (
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 px-4 pt-10 pb-36 md:pb-10">
